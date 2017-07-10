@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+}
+
+.player {
+  width: 32px;
+  height: 32px;
+  background-color: cadetblue;
+}
