@@ -4,6 +4,9 @@ function Board() {
         y: $(window).height()-100,
     };
     this.player = new Player(Math.random()*limit.x, Math.random()*limit.y);
+    this.hunter = new Hunter(Math.random()*limit.x, Math.random()*limit.y);
+    this.mountain = new Mountain(Math.random()*limit.x, Math.random()*limit.y);
+    this.player.linkToKeyboard();
 }
 
 Board.prototype.init = function(){
@@ -11,17 +14,14 @@ Board.prototype.init = function(){
   var limitY = $(window).height()-100;
   $('#board').css('background-color', '#ddd').css('height', limitY+'px').css('width', limitX+'px');
   $('#board').append('<div class="player"></div>');
-
-  var x = this.player.position.x;
-  var y = this.player.position.y;
-  $('.player').css('transform', 'translate('+x+'px,'+y+'px)');
+  $('#board').append('<div class="mountain"></div>');
+  $('#board').append('<div class="hunter"></div>');
 };
 
 /**
  * Render the board and all its elements
  */
 Board.prototype.render = function(){
-  // $('#board').append('<div>Player</div>')
   var x = this.player.position.x;
   var y = this.player.position.y;
   $('.player').css('transform', 'translate('+x+'px,'+y+'px)');

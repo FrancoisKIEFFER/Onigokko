@@ -6,4 +6,24 @@ body {
   width: 32px;
   height: 32px;
   background-color: cadetblue;
+  position: relative;
+}
+
+#board {
+  border: solid;
+}
+
+.mountain {
+  width: 0;
+	height: 0;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-bottom: 80px solid green;
+}
+
+.hunter {
+  width: 32px;
+	height: 32px;
+	background: red;
+	border-radius: 50%;
 }
