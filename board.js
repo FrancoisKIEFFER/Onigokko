@@ -5,7 +5,7 @@ function Board() {
   };
   this.initialPlayer = new Character(Math.floor(Math.random()*limit.x), Math.floor(Math.random()*limit.y));
   this.hunter = new Character(Math.floor(Math.random()*limit.x),Math.floor(Math.random()*limit.y));
-  this.hunter.linkToKeyboard(75, 79, 77, 76, 8);
+  this.hunter.linkToKeyboard(74, 73, 76, 75, 8);
   this.playersArray = [];
   this.addPlayer(this.initialPlayer);
 
