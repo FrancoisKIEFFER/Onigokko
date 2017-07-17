@@ -10,21 +10,11 @@ function Character(x,y) {
     y: this.initialSpeed
   };
 }
-//
-// Ball.prototype.move = function(){
-//     this.position.x += this.speed.x;
-//     this.position.y += this.speed.y;
-//
 
-// };
-
-Character.prototype.linkToKeyboard = function(left = 81, up = 90, right = 68, down = 83) {
+Character.prototype.linkToKeyboard = function(left = 83, up = 69, right = 70, down = 68, speed = 5) {
   var that = this;
   //        Moving Character
   var leftDown, rightDown, upDown, downDown,leftKey,upKey,rightKey,downKey;
-  var box = $(".player");
-
-  // console.log(box);
 
   var ctrlDown = false;
   var ctrlKey = 17,
@@ -84,16 +74,16 @@ Character.prototype.linkToKeyboard = function(left = 81, up = 90, right = 68, do
 
   setInterval(function() {
     if (upKey) {
-      that.position.y -= 5;
+      that.position.y -= speed;
     }
     if (rightKey) {
-      that.position.x += 5;
+      that.position.x += speed;
     }
     if (downKey) {
-      that.position.y += 5;
+      that.position.y += speed;
     }
     if (leftKey) {
-      that.position.x -= 5;;
+      that.position.x -= speed;;
     }
 
     if (that.position.x < 0) {
@@ -116,7 +106,7 @@ Character.prototype.linkToKeyboard = function(left = 81, up = 90, right = 68, do
 
 
 Character.prototype.render = function() {
-  $('.player').css('transform', 'translate('+this.position.x+'px,'+this.position.y+'px)');
+  $('.players').css('transform', 'translate('+this.position.x+'px,'+this.position.y+'px)');
 }
 
 // Returns true when the Character touches the otherCharacter (when they are close)
@@ -126,17 +116,3 @@ Character.prototype.doesTouch = function(otherCharacter) {
   }
   return false;
 }
-//
-// Character.prototype.printPosition = function() {
-//   console.log(this.position.x, this.position.y);
-// }
-
-// Character.setPosition(x, y, board) {
-//   // TODO: put a control on x y (it should be > 0, ...)
-//   if (x < 0) {
-//     x = 0;
-//   }
-//   this.position.x = x;
-//   this.position.y = y;
-//
-// }
